@@ -1,12 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+
 import Header from "./components/Layout/Header";
+import AvailableMeal from "./components/Meals/AvailableMeal";
+import MealsSummary from "./components/Meals/MealsSummary";
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
       <Header />
-    </div>
+      <main>
+        <MealsSummary />
+        <AvailableMeal />
+      </main>
+    </React.Fragment>
   );
 }
 
