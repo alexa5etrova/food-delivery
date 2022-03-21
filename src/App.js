@@ -3,6 +3,7 @@ import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
 import AvailableMeal from "./components/Meals/AvailableMeal";
 import MealsSummary from "./components/Meals/MealsSummary";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,14 +12,14 @@ function App() {
     setIsModalOpen(!isModalOpen);
   };
   return (
-    <React.Fragment>
+    <CartProvider>
       {isModalOpen && <Cart onClose={onCartToggling} />}
       <Header onCartOpening={onCartToggling} />
       <main>
         <MealsSummary />
         <AvailableMeal />
       </main>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 
