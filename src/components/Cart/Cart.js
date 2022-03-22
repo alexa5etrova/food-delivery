@@ -9,8 +9,12 @@ const Cart = (props) => {
 
   let arr = cxt.items;
   let hasItems = cxt.items.length > 0;
-  let onRemoveItemFromCart = (id) => {};
-  let onAddingItemToCart = (item) => {};
+  let onRemoveItemFromCart = (id) => {
+    cxt.removeItem(id)
+  };
+  let onAddingItemToCart = (item) => {
+    cxt.addItem({...item, amount: 1});
+  };
 
   const cartItems = (
     <ul className={styles["cart-items"]}>
